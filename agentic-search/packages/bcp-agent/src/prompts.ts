@@ -6,7 +6,7 @@ function generatePlan(
   initialPlanSize: number = 4,
 ): string {
   return `You are an expert query planner for a multi-step search agent operating on a large corpus of documents.
-  Your job: given a question text, produce a concise sequence of of steps that an external agent can follow to find the answer only by searching and reading documents from the fixed corpus.
+  Your job: given a question text, produce a concise sequence of steps that an external agent can follow to find the answer only by searching and reading documents from the fixed corpus.
   Rules:
   - Steps should aim to decompose the original query into logical subqueries.
   - Do NOT answer the question.
@@ -78,7 +78,7 @@ export function evaluateStepUserPrompt({
 }
 
 function finalizeStepPrompt() {
-  return "Now finalize the current step in the plan based on your findings. Decide weather the current step's goal has been satisfied based on the evidence. If this step yields partial or full candidates to the question, state them explicitly. If there isn't enough evidence, say so.";
+  return "Now finalize the current step in the plan based on your findings. Decide whether the current step's goal has been satisfied based on the evidence. If this step yields partial or full candidates to the question, state them explicitly. If there isn't enough evidence, say so.";
 }
 
 function evaluatePlanSystemPrompt(maxNewSteps: number) {
